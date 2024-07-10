@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import toml from '@iarna/toml';
 
-const configFileName = 'config.toml';
+const configFileName = 'sample.config.toml';
 
 interface Config {
   GENERAL: {
