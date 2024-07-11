@@ -13,8 +13,6 @@ services:
     build:
       context: .
       dockerfile: backend.dockerfile
-      args:
-        - SEARXNG_API_URL=http://searxng:9001
     depends_on:
       - searxng
     ports:

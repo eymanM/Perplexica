@@ -1,7 +1,5 @@
 FROM node:slim
 
-ARG SEARXNG_API_URL
-
 WORKDIR /home/perplexica
 
 COPY src /home/perplexica/src
