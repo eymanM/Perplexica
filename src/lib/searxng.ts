@@ -38,8 +38,9 @@ export const searchSearxng = async (
     });
   }
 
+  console.log('searchxx', url.toString());
   const res = await axios.get(url.toString());
-
+  console.log('searchxx', res);
   const results: SearxngSearchResult[] = res.data.results;
   const suggestions: string[] = res.data.suggestions;
 
