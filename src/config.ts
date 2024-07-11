@@ -1,19 +1,4 @@
 
-interface Config {
-  GENERAL: {
-    PORT: number;
-    SIMILARITY_MEASURE: string;
-  };
-  API_KEYS: {
-    OPENAI: string;
-    GROQ: string;
-  };
-  API_ENDPOINTS: {
-    SEARXNG: string;
-    OLLAMA: string;
-  };
-}
-
 
 export const getPort = () => 3010;
 

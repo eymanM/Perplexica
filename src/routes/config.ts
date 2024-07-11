@@ -7,7 +7,6 @@ import {
   getGroqApiKey,
   getOllamaApiEndpoint,
   getOpenaiApiKey,
-  updateConfig,
 } from '../config';
 
 const router = express.Router();
@@ -42,22 +41,5 @@ router.get('/', async (_, res) => {
   res.status(200).json(config);
 });
 
-router.post('/', async (req, res) => {
-  const config = req.body;
-
-  const updatedConfig = {
-    API_KEYS: {
-      OPENAI: config.openaiApiKey,
-      GROQ: config.groqApiKey,
-    },
-    API_ENDPOINTS: {
-      OLLAMA: config.ollamaApiUrl,
-    },
-  };
-
-  updateConfig(updatedConfig);
-
-  res.status(200).json({ message: 'Config updated' });
-});
 
 export default router;
