@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getSearxngApiEndpoint } from '../config';
+import logger from '../utils/logger';
 
 interface SearxngSearchOptions {
   categories?: string[];
@@ -38,9 +39,9 @@ export const searchSearxng = async (
     });
   }
 
-  console.log('searchxx', url.toString());
+  logger.info('Searxng search', url.toString());
   const res = await axios.get(url.toString());
-  console.log('searchxx', res);
+  logger.info('Searxng search result', res);
   const results: SearxngSearchResult[] = res.data.results;
   const suggestions: string[] = res.data.suggestions;
 
