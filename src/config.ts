@@ -1,6 +1,6 @@
 
 
-export const getPort = () => 3010;
+export const getPort = () => 3009;
 
 export const getSimilarityMeasure = () =>
   'cosine'
