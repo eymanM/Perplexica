@@ -6,6 +6,17 @@ services:
     ports:
       - 9003:8080
     restart: unless-stopped
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
 
   perplexica-backend:
     build:
