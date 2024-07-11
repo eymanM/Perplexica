@@ -26,7 +26,7 @@ export const searchSearxng = async (
 ) => {
   const searxngURL = getSearxngApiEndpoint();
 
-  const url = new URL(`${searxngURL}/search?d=json`);
+  const url = new URL(`${searxngURL}/search?format=json`);
   url.searchParams.append('q', query);
 
   if (opts) {
