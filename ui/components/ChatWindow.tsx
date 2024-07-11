@@ -45,7 +45,7 @@ const useSocket = (
           !embeddingModelProvider
         ) {
           const providers = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/models`,
+            `${process.env.NEXT_PUBLIC_API_URL.replace('/undefined', '')}}/api/models`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const useSocket = (
           );
         } else {
           const providers = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/models`,
+            `${process.env.NEXT_PUBLIC_API_URL.replace('/undefined', '')}/api/models`,
             {
               headers: {
                 'Content-Type': 'application/json',
