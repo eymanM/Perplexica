@@ -47,7 +47,7 @@ const Searchvideos = ({
             const chatModel = localStorage.getItem('chatModel');
 
             const res = await fetch(
-              `${process.env.NEXT_PUBLIC_API_URL}/videos`,
+              `${process.env.NEXT_PUBLIC_API_URL}/api/videos`,
               {
                 method: 'POST',
                 headers: {

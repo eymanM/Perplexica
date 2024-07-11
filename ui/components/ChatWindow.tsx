@@ -45,7 +45,7 @@ const useSocket = (
           !embeddingModelProvider
         ) {
           const providers = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/models`,
+            `${process.env.NEXT_PUBLIC_API_URL}/api/models`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const useSocket = (
           );
         } else {
           const providers = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/models`,
+            `${process.env.NEXT_PUBLIC_API_URL}/api/models`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -211,7 +211,7 @@ const loadMessages = async (
   setNotFound: (notFound: boolean) => void,
 ) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/chats/${chatId}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/chats/${chatId}`,
     {
       method: 'GET',
       headers: {
