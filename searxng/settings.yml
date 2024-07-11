@@ -27,6 +27,10 @@ brand:
   #     About: "https://searxng.org"
 
 search:
+  #sd
+  format:
+    - html
+    - json
   # Filter results. 0: None, 1: Moderate, 2: Strict
   safe_search: 0
   # Existing autocomplete backends: "dbpedia", "duckduckgo", "google", "yandex", "mwmbl",
