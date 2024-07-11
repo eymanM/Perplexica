@@ -5,8 +5,6 @@ services:
       - ./searxng:/etc/searxng:rw
     ports:
       - 9003:9003
-    networks:
-      - perplexica-network
     restart: unless-stopped
 
   perplexica-backend:
@@ -21,8 +19,6 @@ services:
       - backend-dbstore:/home/perplexica/data
     extra_hosts:
       - 'host.docker.internal:host-gateway'
-    networks:
-      - perplexica-network
     restart: unless-stopped
 
   perplexica-frontend:
@@ -36,16 +32,8 @@ services:
       - perplexica-backend
     ports:
       - 3009:3009
-    networks:
-      - perplexica-network
     restart: unless-stopped
 
-networks:
-  perplexica-network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.30.0.0/16
 
 volumes:
   backend-dbstore:
